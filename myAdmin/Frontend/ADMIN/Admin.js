@@ -21,10 +21,14 @@ btnLogin.addEventListener( "click", (e) => {
         }
       })
   .then(response => {
- 
-    console.log('Well done!');
-    console.log('User profile', response.data.user);
-    console.log('User token', response.data.jwt);
+     if(response.data.user){
+     alert("Successfully LOGED In")
+      console.log('User profile', response.data.user);
+      console.log('User token', response.data.jwt);
+      window.location = "/User/AddJOB.html";
+     }
+
+
   })
   .catch(error => {
     // Handle error.
@@ -34,3 +38,4 @@ btnLogin.addEventListener( "click", (e) => {
 
 
 });
+
